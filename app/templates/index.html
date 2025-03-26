@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">欢迎使用 Flask 应用</h1>
+                <p class="card-text">
+                    这是一个基于 Flask 的 Web 应用模板，包含以下功能：
+                </p>
+                <ul>
+                    <li>用户认证系统</li>
+                    <li>后台管理界面</li>
+                    <li>响应式布局</li>
+                    <li>数据库集成</li>
+                </ul>
+                {% if current_user.is_admin %}
+                <a href="{{ url_for('admin.index') }}" class="btn btn-primary">进入后台管理</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
